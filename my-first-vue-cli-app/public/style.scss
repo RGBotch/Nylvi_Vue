@@ -1,0 +1,1071 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+$gris:#999a9c;
+$jaune:#f6e056;
+
+$break-Tablet:1280px;
+$break-Phone:720px;
+
+body
+{
+  background-color:$gris;
+  background-image:linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.1)
+  ),url(./image/background.svg) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Raleway', sans-serif;
+  margin:0;
+  font-size: 1em;
+  #navBurger
+  {
+    display: none;
+    overflow: hidden;
+    height: 180px;
+    position: relative;
+    @media only screen and (max-width:$break-Phone)
+    {
+        display: block;
+        bottom:0;
+    }
+    img
+    {
+      position: absolute;
+      z-index: 4;
+      width: 100%;
+      bottom:0px;
+      animation: rotate 4s linear infinite;
+    }
+        
+    @keyframes rotate 
+    {
+      to 
+      {
+        transform: rotate(360deg);
+      }
+    } 
+  }
+    
+  main
+  {
+    background-image:url(./image/deco.svg) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: $break-Tablet;
+    margin: 0 auto;
+
+    @media only screen and (max-width: $break-Tablet){
+      width: 90%;
+    }
+    @media only screen and (max-width: $break-Phone){
+      background-size: contain;
+      background-repeat: repeat;
+    }
+    .moveInUp-leave-active{
+      animation: moveInUp .4s ease-in;
+    }
+    @keyframes moveInUp{
+     0%{
+      transform: translateY(0);
+      opacity: 1;
+     }
+      100%{
+      transform: translateY(400px);
+      opacity: 0.2;
+     }
+    }
+    .bouton
+    {
+      color: white;
+      background-color:$jaune;
+      background: linear-gradient(145deg, #ddca4d, #fff05c);
+      box-shadow:  7px 7px 19px #848486,
+             -7px -7px 19px #aeb0b2;
+      border: none;
+      border-radius: 6px;
+      width: 100px;
+      height: 30px;
+      cursor: pointer;
+      &:hover
+      {
+        background: #f6e056;
+        box-shadow: inset 7px 7px 19px #ccba47,
+            inset -7px -7px 19px #ffff65;
+      }
+      a
+      {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    #sortie
+    {
+      margin-bottom: 20px;
+    }
+    h1, #titreSite
+    {
+      font-family: 'Spartan', sans-serif;
+      color: white;
+      font-size: 1.5em;
+      text-align: center;
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    h2
+    {
+      text-align: center;
+      font-size: 1.2em;
+      color: white;
+      text-transform: uppercase;
+    }
+    .border
+    {
+      margin: auto;
+      border-radius: 12px;
+      padding: 6px;
+      border: solid 2px $jaune;
+      width: 100px;
+      height: 30px;
+    }
+    .photoProfil
+    {
+      border: solid 4px $jaune;
+      width: 72px;
+      position: relative;
+      z-index: 2;
+    }
+    header ////////////////////////////////////////////////*HEADER*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      @media only screen and (max-width: $break-Tablet)
+      {
+        position: relative;
+      }
+      #haut
+      {
+        display: flex;
+        justify-content: space-between;
+        div
+        {
+          flex:1;
+          display: flex;
+          flex-direction: column;
+        }
+        #burger
+        {
+          img
+          {
+            display: none;
+            width: 50px;
+            margin: auto;
+            @media only screen and (max-width:$break-Phone)
+            {
+              display: block;
+            }
+          }
+        } 
+        #logo
+        {
+          a
+          {
+            text-decoration: none;
+            img
+            {
+              width: 80px;
+              display: block;
+              margin: auto;
+              margin-top: 20px;
+            }
+          }
+        } 
+        #connexion
+        {
+          .photoProfil
+          {
+            display: flex;
+            align-self: flex-end;
+            margin-top: 20px;
+            margin-right: 10px;
+          }
+          .bouton
+          {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            align-self: flex-end;
+            margin-top: 20px;
+            box-shadow:  20px 20px 60px #767778,
+             -20px -20px 60px #a0a1a2;
+          }
+        } 
+      }
+      nav
+      {
+        flex:1;
+        padding: 0 100px;
+        margin-top: 20px;
+        
+          @media only screen and (max-width:$break-Phone)
+          {
+            position:absolute;
+            top:-140px;
+            z-index: 6;
+            width: 100%;
+            padding: 0;
+          }
+        ul
+        {
+          display: flex;
+          justify-content: space-between;
+          margin:0;
+          padding: 0;
+          @media only screen and (max-width:$break-Phone)
+          {
+            display: block;
+          }
+          li
+          {
+            list-style: none;
+            border: solid 1px transparent ;
+            text-align: center;
+            &:hover
+              {
+                border: solid 1px $jaune ;
+                border-radius: 6px;
+                color: black;
+                background: #8b8c8d;
+                  box-shadow:  20px 20px 60px #767778,
+                  -20px -20px 60px #a0a1a2;
+              }
+              &:not(:last-child)
+              {
+                  @media only screen and (max-width:$break-Phone)
+                  {
+                      margin-bottom: 4px;
+                  }
+              }
+            a
+            {
+              text-decoration: none;
+              color: $jaune;
+              text-transform: uppercase;
+              font-weight: 500;
+              padding:6px;
+            }
+          }
+        }
+      }
+      #rechercher
+      {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 20px;
+        #barre
+        {
+          background: #999a9c;
+          box-shadow: inset 22px 22px 45px #8d8e90,
+            inset -22px -22px 45px #a5a6a8;
+          color: black;
+          border: solid 2px $jaune;
+          border-radius: 6px;
+          padding:6px;
+          width: 300px;
+          align-content: center;
+          margin-left: 32px;
+          appearance: none;
+          outline: none;
+        }
+        #loupe
+        {
+          text-decoration: none;
+          
+          &:hover
+          {
+            border:none;
+            cursor: pointer;
+          }
+          img
+          {
+            width: 20px;
+            padding:0 6px;
+          }
+        }
+      }  
+    }
+    #panier{///////////////////////////////////////////////////////* PANIER*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+      background-color:$gris;
+      padding: 10px;
+      border: 1px solid $jaune;
+      border-radius: 10px;
+      div #produitsPanier{
+        display: flex;
+        flex-direction: column;
+      }
+      div{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        p{
+          margin:0;
+        }
+      }
+      .ligne{
+        padding:0;
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+          margin-bottom: 10px;
+        }
+        .produit{
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+            width: 50px;
+          }
+          p{
+            color: black;
+            margin-top: 10px;
+            &:hover{
+              color: white;
+            }
+          }
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        input[type=number]{
+          height: 20px;
+          width: 30px;
+          margin:0;
+          -moz-appearance: textfield;
+          outline: none;
+          border-radius: 6px;
+          text-align: center;
+
+          &:hover{
+            border-color: $jaune;           
+          }
+        }
+        .supprimer{
+          border:1px solid $jaune;
+          width: 30px;
+          height: 30px;
+          border-radius: 6px;
+          color: black;
+          background-color: $gris;
+        }
+      }      
+    }
+    .formulaire{
+      margin-top: 20px;
+      display: block;
+      background-color:$gris;
+      padding: 10px;
+      border: 1px solid $jaune;
+      border-radius: 10px;
+      #champs{
+        display: flex;
+        flex-direction: column;
+
+        input{
+          flex: 1;
+          padding:4px;
+          margin-bottom: 10px;
+          outline: none;
+          border-radius: 3px;
+          
+          &:invalid{
+            border:solid 2px  red;
+          }
+          &:valid{
+            border:solid 2px  blue;
+          }
+        }
+      }
+    }
+    #filtre ////////////////////////////////////////////////*FILTRE*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      margin-top: 20px;
+      border: solid 2px $jaune;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: $gris;
+
+      #potent
+      {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1em;
+
+        @media only screen and (max-width:$break-Phone){
+          display: block;
+        }
+        #prix, #periode
+        {
+          flex:1;
+          h4
+          {
+            text-align: center;
+            margin: 0;
+            font-size: 1.2em;
+            color: $jaune;
+          }
+          .slider {
+            margin: 50px auto;
+            padding: 0px;
+            width: 80%;
+            background-color:$jaune;
+            height: 6px;
+
+            .fader {
+              display: inline-block;
+              width: 15px;
+              border-radius: 5px;
+              margin-top: -15px;
+              margin-left: 0%;
+              height: 40px;
+              background-color: $gris;
+              box-shadow: 1px 1px 5px $jaune;
+            }
+          }
+        }  
+      }
+      #dropContent, #dropHard
+      {
+        margin-top: 20px;
+        ul.niveau1
+        {
+          display: flex;
+          justify-content: space-between;
+          font-size: 1em;
+          margin:0;
+          padding: 0;
+
+          @media only screen and (max-width:$break-Phone)
+          {
+            display: block;
+          }
+          li.niveau1
+          {
+            flex:1;
+            list-style: none;
+            color: $jaune;
+            border: solid 1px $jaune;
+            border-radius: 6px;
+            padding:6px 10px;
+            position: relative;
+            cursor: pointer;
+            
+              &:not(last-child)
+              {
+                margin-right: 10px;
+                @media only screen and (max-width:$break-Phone)
+                {
+                  margin-right: 0;
+                  margin-bottom: 10px;
+                }
+              }
+            &:hover ul.niveau2
+            {
+              display: block;
+              @media only screen and (max-width:$break-Phone)
+                {
+                  display: none;
+                }
+            }
+            ul.niveau2
+            {
+              margin:0;
+              padding: 0;
+              display: none;
+              position: absolute;
+              left: 0;
+              z-index: 2;
+              background-color: $gris;
+              width: 100%;
+              li
+              {
+                list-style: none;
+                padding:6px 10px;
+              }
+            }   
+          }  
+        }
+      }
+    }
+    #vinyles ////////////////////////////////////////////////*ARTICLES*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      @media only screen and (max-width:$break-Tablet)
+      {
+        justify-content: center;
+      }
+      .vinyle
+      {
+        margin: 2px;
+        background-color: $gris;
+        .cover
+        {
+          width: 250px;
+          height: 250px;
+        }
+        .titreVinyle
+        {
+          color: white;
+          padding-left: 6px;
+        }
+        .auteurVinyle
+        {
+          color: white;
+          padding-left: 6px;
+        }
+        .dateSortie
+        {
+          color: white;
+          padding-left: 6px;
+        }
+        .bouton
+        {
+          display: block;
+          margin: auto;
+          margin-bottom: 20px;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+    #produit ////////////////////////////////////////////////*ARTICLE*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      article
+      {
+        display: flex;
+        justify-content: space-between;
+        @media only screen and (max-width: $break-Phone){
+          flex-direction: column-reverse;
+        }
+        aside
+        {
+          flex: 1;
+          margin-right: 40px;
+          background-color: $gris;
+          padding: 20px;
+          @media only screen and (max-width: $break-Phone){
+            flex-direction: column-reverse;
+            margin-right: 0;
+          }
+          .champs{
+            margin-bottom: 20px;
+            label
+            {
+              color: $jaune;
+            }
+            p
+            {
+              color: white;
+              margin: 0;;
+            }
+          }  
+        }
+        #imagesProduit
+        {
+          flex: 1;
+          display: flex;
+          justify-content: space-between;
+          @media only screen and (max-width: $break-Phone){
+            margin-bottom: 40px;
+          }
+          #grande
+          {
+            display: block;
+            margin: auto;
+            width: 60%;
+            height: 80%;
+          }
+          #autresImages
+          {
+            width: 80px;
+            .petite
+            {
+              width: 80px;
+              height: 80px;
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+    }
+    #actionProduit
+    {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+    }
+    #separe ////////////////////////////////////////////////*CONNEXION*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      display: flex;
+      justify-content: space-between;
+      @media only screen and (max-width: $break-Tablet){
+        display: block;
+      }
+      div#gauche
+      {
+        margin-right: 20px;
+        @media only screen and (max-width: $break-Tablet){
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      div#gauche, div#droite
+      {
+        background-color: $gris;
+        border: solid 2px $jaune;
+        border-radius: 24px;
+        flex:1;
+        padding:20px;
+        @media only screen and (max-width: $break-Tablet){
+          padding:10px;
+        }
+        h3
+        {
+          text-align: center;
+        }
+        .id 
+        {
+          margin: auto;
+          border: none;
+          border-radius:6px;
+          background: #ffffff;
+          box-shadow: inset 5px 5px 11px #d4d4d4,
+          inset -5px -5px 11px #ffffff; 
+          margin-bottom: 20px;
+          padding:6px;
+          width: 80%;
+        }
+        .mdp 
+        {
+          border: none;
+          margin: auto;
+          border-radius:6px;
+          background: #ffffff;
+          box-shadow: inset 5px 5px 11px #d4d4d4,
+          inset -5px -5px 11px #ffffff; 
+          margin-bottom: 20px;
+          padding:6px;
+          width: 80%;
+        }
+        & div
+        {
+          display: flex;
+          flex-direction: column;
+          margin-bottom:20px;
+          width: 100%;
+          img
+          {
+            display: block;
+            margin: auto;
+          }
+          p
+          {
+            text-align: center;
+          }
+          .bouton
+          {
+            display: block;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+          }
+        }
+        .cover
+        {
+          display: block;
+          margin: auto;
+          @media only screen and (max-width: $break-Phone){
+            width: 60%;
+          }
+        }
+      }
+    }
+    #tchat ////////////////////////////////////////////////*ECHANGER*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      display: flex;
+      flex-direction: column;
+      #discussion
+      {
+        background-color: $gris;
+        border-radius: 12px;
+        margin: 10px 0;
+        padding:10px;
+        p
+        {
+          color:white;
+          margin-bottom: 10px;
+          &:last-child
+          {
+            margin:0 ;
+          }
+        }
+        .offreMessage
+        {
+          text-align:right;
+        }
+      }
+      #ecrire
+      {
+        display: flex;
+        justify-content: space-between;
+        #envoyer
+        {
+          margin: auto;
+          color: white;
+          background-color:$jaune;
+          background: linear-gradient(145deg, #ddca4d, #fff05c);
+          box-shadow:  7px 7px 19px #848486,
+             -7px -7px 19px #aeb0b2;
+          border: none;
+          border-radius: 6px;
+          width: 20%;
+          height: 30px;
+          cursor: pointer;
+        }
+        #message
+        {
+          width: 70%;
+          align-self: flex-end;
+          background: #999a9c;
+          box-shadow: inset 22px 22px 45px #8d8e90,
+          inset -22px -22px 45px #a5a6a8;
+          color: black;
+          border: solid 2px $jaune;
+          border-radius: 6px;
+          padding:6px;
+          align-content: center;
+          appearance: none;
+          outline: none;
+        }
+      }
+    }
+    #recent ////////////////////////////////////////////////*INDEX*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      display:flex;
+      flex-direction: column;
+      padding-top: 20px;
+
+      #wrapper{
+        width:900px;
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        margin: 60px auto 120px auto;
+        @media only screen and (max-width:$break-Tablet){
+          width: 100%;
+          margin: 40px auto 80px auto;
+        }
+        @media only screen and (max-width:$break-Phone){
+          margin: 20px auto 60px auto;
+        }
+
+        .carrousel{ ////////////////////////////////////////////////*CARROUSEL*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+          width: 220px;
+          height: 220px;
+          margin: 0 auto;
+          -webkit-transform-style: preserve-3d;
+          -webkit-animation: Caroussel 16s infinite linear;
+          -moz-transform-style: preserve-3d;
+          -moz-animation: Caroussel 16s infinite linear;
+
+          @media only screen and (max-width:$break-Phone){
+            overflow: hidden;
+            -webkit-animation: Caroussel 6s infinite linear;
+            -moz-animation: Caroussel 6s infinite linear;
+          }
+          .plan{
+            position:absolute;
+            width: 220px;
+            height: 220px;
+            text-align:center;
+            font-size: 1em;
+            color:#FFF;
+          }
+          @-webkit-keyframes Caroussel{
+        
+            from { -webkit-transform: rotateY(0); }
+            to { -webkit-transform: rotateY(-360deg); }
+          }
+          
+          @-moz-keyframes Caroussel{
+            
+            from { -moz-transform: rotateY(0); }
+            to { -moz-transform: rotateY(-360deg); }
+          }
+    
+          .p1{ -webkit-transform: translateZ(300px);}
+          .p2{ -webkit-transform: rotateY(45deg) translateZ(300px);}
+          .p3{ -webkit-transform: rotateY(90deg) translateZ(300px);}
+          .p4{ -webkit-transform: rotateY(135deg) translateZ(300px);}
+          .p5{ -webkit-transform: rotateY(180deg) translateZ(300px);}
+          .p6{ -webkit-transform: rotateY(225deg) translateZ(300px);}
+          .p7{ -webkit-transform: rotateY(270deg) translateZ(300px);}
+          .p8{ -webkit-transform: rotateY(315deg) translateZ(300px);}
+
+          .cover
+          {
+            width: 220px;
+            height: 220px;
+            display: block;
+            margin: auto;
+            padding-left: 20px;
+          }
+          .titreVinyle
+        {
+          color: black;
+          width: 260px;
+          background-color:$jaune;
+          text-decoration: none;
+        }
+        
+        }
+      }
+    }
+    #creer ////////////////////////////////////////////////*INSCRIPTION*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      border-radius: 24px;
+      border: solid 4px $jaune;
+      background-color: $gris;
+      margin-bottom: 40px;
+      padding:20px;
+      p
+      {
+        color: white;
+        text-align: center;
+      }
+      .border
+      {
+        margin: 20px auto;
+        .bouton
+        {
+          display: block;
+          margin:0 auto;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+        }
+      }
+    } 
+    #blogPosts ////////////////////////////////////////////////*POSTS*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    {
+      padding-bottom: 40px;
+      .bouton
+          {
+            display: block;
+            margin:0 auto;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+      #appercu
+      {
+        display: flex;
+        justify-content: space-between;
+
+          @media only screen and (max-width:$break-Phone)
+          {
+            display: block;
+          }
+          
+        .extrait
+        {
+          border-radius: 12px;
+          border: solid 4px $jaune;
+          background-color: $gris;
+          flex:1;
+          padding: 20px;
+
+          @media only screen and (max-width:$break-Phone)
+            {
+              margin-top:20px;
+            }
+          &:first-child
+          {
+            margin-right: 20px;
+
+            @media only screen and (max-width:$break-Phone)
+            {
+              margin-right:0;
+            }
+          }
+          &:last-child
+          {
+            margin-left: 20px;
+
+            @media only screen and (max-width:$break-Phone)
+            {
+              margin-left:0;
+            }
+          }
+          h3
+          {
+            text-align: center;
+            color: white;
+          }
+          p
+          {
+            color: white;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+  #post
+  {
+    color: white;
+    #intro, #conclusion
+    {
+      border-radius: 12px;
+      border: solid 4px $jaune;
+      background-color: $gris;
+      padding: 20px;
+    }
+    #grandeImage
+    {
+      display: block;
+      margin: auto;
+    }
+    .paragraphGauche, .paragraphDroite
+    {
+      display: flex;
+      justify-content: space-between;
+      @media only screen and (max-width:$break-Phone)
+            {
+              flex-direction: column;
+            }
+      .corp
+      {
+        text-align: justify;
+        width: 60%;
+        padding:20px;
+        @media only screen and (max-width:$break-Phone)
+        {
+          width: 100%;
+          padding:0;
+        }
+      }
+      .imageCorp
+      {
+        width: 40%;
+        padding:20px;
+        @media only screen and (max-width:$break-Phone)
+        {
+          padding:0;
+          width: 100%;
+        }
+      }
+    }
+    .paragraphDroite
+    {
+      @media only screen and (max-width:$break-Phone)
+      {
+        flex-direction: column-reverse;
+      }
+    }
+    
+  } 
+  #artiste ////////////////////////////////////////////////*ARTISTE*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  {
+    border-radius: 24px;
+    border: solid 4px $jaune;
+    background-color: $gris;
+    padding:20px;
+    #artisteMois
+    {
+      text-decoration: none;
+      color: $jaune;
+    }
+    p
+    {
+      color: white;
+      text-align: justify;
+    }
+    .border
+    {
+      margin: 20px auto;
+      .bouton
+      {
+        margin:0 auto;
+      }
+    }
+  } 
+  footer ////////////////////////////////////////////////*FOOTER*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  {
+    border-radius: 6px;
+    border: solid 4px $jaune;
+    padding: 20px 100px;
+    margin-top: 40px;
+      @media only screen and (max-width:$break-Phone)
+      {
+        padding:20px;
+      }
+    ul
+    {
+      margin: 0;
+      padding:0;
+    }
+    #lien
+    {
+      display: flex;
+      justify-content: space-between;
+      li
+        {
+          list-style: none;
+          margin-bottom: 10px;
+          color: $jaune;
+          cursor: pointer;
+        }
+      #interne
+      {
+        .pages
+        {
+          color: $jaune;
+          text-transform: uppercase;
+        }
+      }
+      #reseau
+      {
+        .iconReseau
+        {
+          width: 30px;
+          filter: invert(86%) sepia(40%) saturate(723%) hue-rotate(344deg) brightness(108%) contrast(93%);
+        }
+      }
+    }
+    #faitPar
+    {
+      text-align: end;
+      color: white;
+      a
+      {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+
