@@ -1,11 +1,10 @@
 <template>
     <div>
-        <button class="bouton" onclick="location.href='artistes.html'">DASHBOARD</button>
             <section id="ajoutCarrousel">
                 <h2>Dernier ajout Carrousel</h2>
                     <div>
                         <div>
-                            <input type="file" id="avatar" name="avatar" accept="image/jpg, image/JPG, image/jpeg">
+                            <input type="file" id="avatar" name="avatar" accept="image/jpg,image/JPG,image/jpeg">
                             <input type="text" class="titreAjout" value="titre vinyle"/>
                             <input type="submit">
                         </div>
@@ -43,3 +42,4 @@
             </section>
     </div>
 </template>
+
