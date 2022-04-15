@@ -222,6 +222,10 @@ body main header #haut #connexion .photoProfil {
   margin-right: 10px;
 }
 
+body main header #haut #connexion .photoProfil img {
+  width: 72px;
+}
+
 body main header #haut #connexion .bouton {
   display: -webkit-box;
   display: -ms-flexbox;

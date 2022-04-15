@@ -1,19 +1,17 @@
 <template>
     <div>
             <section id="ajoutCarrousel">
-                <h2>Dernier ajout Carrousel</h2>
+                <h2>Edition Carrousel Dernier ajout</h2>
                     <div>
                         <div>
                             <input type="file" id="avatar" name="avatar" accept="image/jpg,image/JPG,image/jpeg">
-                            <input type="text" class="titreAjout" value="titre vinyle"/>
+                            <input type="text" class="titreAjout" placeholder="titre du vinyle"/>
                             <input type="submit">
                         </div>
+                        <div v-for="produit in produits" :key="produit.id" to="Articles">
+                            <p class='titreVinyle'>{{produit.nom}}</p>
+                        </div>
                     </div>
-            </section>
-            <section id="creer">
-                <h2>Ouvrez votre Collection et échanger des Vinyles</h2>
-                <textarea name="creerTexte" rows="10em">
-                </textarea>
             </section>
             <section id="blogPosts">
                 <h2>Le Blog</h2>
@@ -43,3 +41,30 @@
     </div>
 </template>
 
+<script>
+
+import {mapState} from 'vuex'
+import {mapGetters} from 'vuex'
+
+export default ({
+   name: 'BlogPost',
+   components:{
+       Filtre,
+   },
+   computed: {
+        ...mapState(['posts']),
+        ...mapGetters(['getPost']),
+    }
+})
+
+import {mapState} from 'vuex'
+export default ({
+   name: 'Console',
+   computed: {
+       ...mapState(['posts']),
+       ...mapState(['produits'])
+   },
+   methods:{
+   }
+})
+</script>

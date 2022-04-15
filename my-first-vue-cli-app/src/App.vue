@@ -14,7 +14,7 @@
                         </router-link>
                     </div>
                     <div id="connexion">
-                        <router-link to="connexion"><img class="photoProfil" src="../public/image/connexion.jpg"/></router-link>
+                        <router-link class="photoProfil" to="connexion"><img src="../public/image/connexion.jpg"/></router-link>
                         <router-link class="bouton" to="panier">Panier</router-link>
                     </div>
                 </div>

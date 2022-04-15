@@ -10,7 +10,7 @@
         <div id="produitsPanier" >
             <div v-for="panier in paniers" class="ligne" v-bind:id="panier.id" :key="panier.id">
                 <a href="#" class="produit"><img v-bind:src="panier.image"/><p>{{panier.nom}}</p></a>
-                <button @click="enleveProduit(panier)" @change="calculTotalLigne(paniert)">-</button>
+                <button @click="enleveProduit(panier)" @change="calculTotalLigne(panier)">-</button>
                 <input type="number" v-bind:data-price="panier.prix" class="quantite" v-bind:value='panier.quantite'>
                 <button @click="ajouteProduit(panier)" @change="calculTotalLigne(panier)">+</button>
                 <span class="prix">{{panier.prix}}€</span>
@@ -31,7 +31,7 @@
 
 import Formulaire from '../components/Formulaire.vue'
 
-import {mapState} from 'vuex'
+import {mapMutations, mapState} from 'vuex'
 
 export default{
     name:'panier',
@@ -42,6 +42,8 @@ export default{
        ...mapState(['paniers']),
     },
     methods:{
+        ...mapMutations(['DELETE_PRODUIT']),
+
         ajouteProduit: function (panier) {
             panier.quantite++;
         },
@@ -50,12 +52,10 @@ export default{
                 panier.quantite--
         },
         calculTotalLigne: function (panier) {
-            console.log("totalLigne")
             panier.ligne = panier.prix * panier.quantite,
             panier.calculTotalLignes()
         },
         calculTotalLignes: function (paniers,panier) {
-            console.log("totalPanier");
             let total= 0;
             for(panier in paniers)
             {
@@ -67,8 +67,7 @@ export default{
             this.$store.dispatch('enleverPanier', itemId)
         },
         supprimerLigne: function (panier) {
-            console.log("supprimer")
-            this.panier.hide(),
+            this.$store.commit('DELETE_PRODUIT', panier),
             panier.calculTotalLignes()
         }
     }  

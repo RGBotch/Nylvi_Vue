@@ -34,7 +34,10 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
-
+    DELETE_PRODUIT(state, panier) {
+      var index = state.paniers.findIndex(p => p.id == panier.id);
+      state.paniers.splice(index, 1);
+   }
   },
   actions: {
     AjoutProduitPanier(){
