@@ -354,7 +354,7 @@ body main #panier {
   border-radius: 10px;
 }
 
-body main #panier div #produitsPanier {
+body main #panier #produitsPanier {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,6 +440,7 @@ body main #panier .ligne input[type=number]:hover {
 }
 
 body main #panier .ligne .supprimer {
+  cursor: pointer;
   border: 1px solid #f6e056;
   width: 30px;
   height: 30px;

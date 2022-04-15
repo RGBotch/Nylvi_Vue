@@ -18,17 +18,8 @@
 
 <script>
 
-// import {mapState} from 'vuex'
-// import {mapGetters} from 'vuex'
-
 export default ({
-   name: 'Echange',
-   components:{
-       Filtre,
-   },
-//    computed: {
-//         ...mapState(['posts']),
-//         ...mapGetters(['getPost']),
-//     }
+   name: 'Echange'
 })
+
 </script>

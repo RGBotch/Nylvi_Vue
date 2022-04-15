@@ -301,7 +301,7 @@ body
       padding: 10px;
       border: 1px solid $jaune;
       border-radius: 10px;
-      div #produitsPanier{
+      #produitsPanier{
         display: flex;
         flex-direction: column;
       }
@@ -355,6 +355,7 @@ body
           }
         }
         .supprimer{
+          cursor: pointer;
           border:1px solid $jaune;
           width: 30px;
           height: 30px;

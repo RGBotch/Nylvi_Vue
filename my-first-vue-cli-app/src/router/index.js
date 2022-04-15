@@ -41,32 +41,32 @@ const routes = [
     component: () => import('../views/Post.vue')
   },
   {
-    path: '/echange',
-    name: 'Echange',
-    component: () => import('../views/Echange.vue')
+    path: '/echanger',
+    name: 'Echanger',
+    component: () => import('../views/Echanger.vue')
   },
   {
     path: '/console',
-    name: 'AdminConsole',
+    name: 'Console',
     component: () => import('../views/admin/Console.vue')
   },
   {
-    path: 'admin/ajouter',
+    path: '/ajouter',
     name: 'Ajouter',
     component: () => import('../views/admin/Ajouter.vue')
   },
   {
-    path: 'admin/tableau-bord',
+    path: '/tableau-bord',
     name: 'TableauBord',
     component: () => import('../views/admin/TableauBord.vue')
   },
   {
-    path: 'admin/redaction',
+    path: '/redaction',
     name: 'Redaction',
     component: () => import('../views/admin/Redaction.vue')
   },
   {
-    path: 'admin/echange',
+    path: '/echange',
     name: 'Echange',
     component: () => import('../views/admin/Echange.vue')
   }

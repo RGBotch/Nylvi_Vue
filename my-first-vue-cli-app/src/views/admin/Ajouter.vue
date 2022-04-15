@@ -34,7 +34,14 @@
                         <input type="file" id="avatar" name="avatar" accept="image/jpg, image/JPG, image/jpeg">
                         <input type="submit">
                     </div>
-                </div>
+                
             </section>
     </div>
 </template>
+
+<script>
+
+export default ({
+   name: 'Ajouter'
+})
+</script>
