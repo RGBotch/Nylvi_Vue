@@ -16,17 +16,7 @@
             <section id="blogPosts">
                 <h2>Le Blog</h2>
                 <div id="appercu">
-                    <article class="extrait">
-                        <input type="text" class="titreAjout" placeholder="titre du post"/>
-                        <textarea name="creerTexte" rows="10em">
-                        </textarea>
-                    </article>
-                    <article class="extrait">
-                        <input type="text" class="titreAjout" placeholder="titre du post"/>
-                        <textarea name="creerTexte" rows="10em">
-                        </textarea>
-                    </article>
-                    <article class="extrait">
+                    <article v-for="post in posts" :key="post.id" to="BlogPost" class="extrait">
                         <input type="text" class="titreAjout" placeholder="titre du post"/>
                         <textarea name="creerTexte" rows="10em">
                         </textarea>
@@ -44,20 +34,7 @@
 <script>
 
 import {mapState} from 'vuex'
-import {mapGetters} from 'vuex'
 
-export default ({
-   name: 'BlogPost',
-   components:{
-       Filtre,
-   },
-   computed: {
-        ...mapState(['posts']),
-        ...mapGetters(['getPost']),
-    }
-})
-
-import {mapState} from 'vuex'
 export default ({
    name: 'Console',
    computed: {

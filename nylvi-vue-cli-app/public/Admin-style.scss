@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+$gris:#999a9c;
+$jaune:#f6e056;
+
+$break-Tablet:1280px;
+$break-Phone:720px;
+
+body
+{
+  background-color:$gris;
+  background-image:url(./image/background-admin.svg) ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Raleway', sans-serif;
+  margin:0;
+  font-size: 1em;
+
+    #navBurger
+    {
+      display: none;
+      overflow: hidden;
+      height: 180px;
+      position: relative;
+      @media only screen and (max-width:$break-Phone)
+      {
+          display: block;
+          bottom:0;
+      }
+      img
+      {
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        bottom:0px;
+        animation: rotate 4s linear infinite;
+      }
+          
+      @keyframes rotate 
+      {
+        to 
+        {
+          transform: rotate(360deg);
+        }
+      } 
+    }
+    main
+    {
+      width: $break-Tablet;
+      margin: 0 auto;
+
+      @media only screen and (max-width: $break-Tablet){
+        width: 90%;
+      }
+      .bouton
+      {
+          color: black;
+        background-color:$gris;
+        box-shadow:  5px 5px 11px #ccba47,
+              -5px -5px 11px #ffff65;
+        border: none;
+        border-radius: 6px;
+        width: 100px;
+        height: 30px;
+        cursor: pointer;
+        &:hover
+        {
+          background: $gris;
+          box-shadow: inset 7px 7px 19px #848486,
+              inset -7px -7px 19px #aeb0b2;
+        }
+      }
+      h1, #titreSite
+      {
+        font-family: 'Spartan', sans-serif;
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+      h2
+      {
+        text-align: center;
+        font-size: 1.2em;
+        color: white;
+        text-transform: uppercase;
+      }
+      .border
+      {
+        margin: auto;
+        border-radius: 12px;
+        padding: 6px;
+        border: solid 2px $jaune;
+        width: 100px;
+        height: 30px;
+      }
+      .photoProfil
+      {
+        border: solid 4px $jaune;
+        width: 72px;
+      }
+      input[type="text"]
+      {
+        border: none;
+          height: 20px;
+          border-radius: 6px;
+          width: 100%;
+          box-shadow: inset 5px 5px 11px #d4d4d4,
+              inset -5px -5px 11px #ffffff;
+              margin:10px 0;
+      }
+      textarea
+      {
+        border: none;
+          border-radius: 6px;
+          width: 100%;
+          box-shadow: inset 5px 5px 11px #d4d4d4,
+              inset -5px -5px 11px #ffffff;
+      }
+      header
+      {
+        @media only screen and (max-width: $break-Tablet)
+        {
+          position: relative;
+        }
+        #haut
+        {
+          display: flex;
+          justify-content: space-between;
+          div
+          {
+            flex:1;
+            display: flex;
+            flex-direction: column;
+          }
+          #burger
+          {
+            img
+            {
+              display: none;
+              width: 50px;
+              margin: auto;
+              @media only screen and (max-width:$break-Phone)
+              {
+                display: block;
+              }
+            }
+          } 
+          #logo
+          {
+            a
+            {
+              text-decoration: none;
+              img
+              {
+                width: 80px;
+                display: block;
+                margin: auto;
+                margin-top: 20px;
+              }
+            }
+          } 
+          #connexion
+          {
+            .photoProfil
+            {
+              display: flex;
+              align-self: flex-end;
+              margin-top: 20px;
+              margin-right: 10px;
+            }
+            button
+            {
+              align-self: flex-end;
+              margin-top: 20px;
+            }
+          } 
+        }
+        nav
+        {
+          flex:1;
+          padding: 0 100px;
+          margin-top: 20px;
+          @media only screen and (max-width:$break-Phone)
+          {
+            position:absolute;
+            top:-140px;
+            z-index: 6;
+            width: 100%;
+            padding: 0;
+          }
+          ul
+          {
+            display: flex;
+            justify-content: space-between;
+            margin:0;
+            padding: 0;
+            @media only screen and (max-width:$break-Phone)
+            {
+              display: block;
+            }
+            li
+            {
+              list-style: none;
+              border: solid 1px transparent ;
+              text-align: center;
+              &:hover
+              {
+                  border: solid 1px $jaune ;
+                  border-radius: 6px;
+                  a
+                  {
+                      color: white;
+                  }
+              }
+              &:not(:last-child)
+              {
+                  @media only screen and (max-width:$break-Phone)
+                  {
+                      margin-bottom: 4px;
+                  }
+              }
+              
+              a
+              {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+                font-weight: 500;
+                padding:6px;
+                @media only screen and (max-width:$break-Phone)
+                {
+                    color: $jaune;
+                }
+              }
+            }
+          }
+        }
+        #rechercher
+        {
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          margin-top: 20px;
+          #barre
+          {
+            background: #999a9c;
+            box-shadow: inset 22px 22px 45px #8d8e90,
+              inset -22px -22px 45px #a5a6a8;
+            color: black;
+            border: solid 2px $jaune;
+            border-radius: 6px;
+            padding:6px;
+            width: 300px;
+            align-content: center;
+            margin-left: 32px;
+            appearance: none;
+            outline: none;
+          }
+          #loupe
+          {
+            text-decoration: none;
+            
+            &:hover
+            {
+              border:none;
+              cursor: pointer;
+            }
+            img
+            {
+              width: 20px;
+              padding:0 6px;
+            }
+          }
+        }  
+      }
+      #board /////////////////////////////////////////////////////////* BOARD *\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+      {
+        display: flex;
+        justify-content: space-between;
+
+        #ajoute, #ecrire, #echange
+        {
+          flex: 1;
+          margin-right: 40px;
+          background-color: $jaune;
+          padding: 20px;
+          border-top-right-radius: 12px;
+          @media only screen and (max-width: $break-Tablet){
+            display: block;
+          }
+
+          &:not(:last-child)
+          {
+            margin-right: 0;
+          }
+          h3
+          {
+            text-align: center;
+          }
+          .bouton
+          {
+              margin-bottom: 20px;
+          }  
+          .actualisation
+          {
+            background-color: $gris;
+            ul
+            {
+              li
+                {
+                  list-style: disc;
+                  padding: 6px;
+                  border-bottom: yellow;
+                  a
+                  {
+                    text-decoration: none;
+                    color: black;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      #produit
+      {
+        article
+        {
+          display: flex;
+          justify-content: space-between;
+
+          aside
+          {
+            flex: 1;
+            margin-right: 40px;
+            background-color: $gris;
+            padding: 20px;
+            .champs{
+              margin-bottom: 20px;
+              label
+              {
+                color: $jaune;
+              }
+              p
+              {
+                color: white;
+                margin: 0;;
+              }
+            }  
+          }
+          #imagesProduit
+          {
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            #grande
+            {
+              width: 60%;
+            }
+            #autresImages
+            {
+              width: 80px;
+              .petite
+              {
+                width: 80px;
+                height: 80px;
+              }
+            }
+          }
+        }
+      }
+      #actionProduit
+      {
+        display: flex;
+        justify-content: space-around;
+        padding: 40px;
+      }
+      #ajoutCarrousel
+      {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          div
+          {
+              margin-bottom: 20px;
+          }
+      }
+      #creer
+      {
+        border-radius: 24px;
+        border: solid 4px $gris;
+        background-color: $jaune;
+        margin-bottom: 40px;
+        padding:20px
+      } 
+      #blogPosts
+      {
+        padding-bottom: 40px;
+        #appercu
+        {
+          display: flex;
+          justify-content: space-between;
+
+            @media only screen and (max-width:$break-Phone)
+            {
+              display: block;
+            }
+          .extrait
+          {
+            border-radius: 12px;
+            border: solid 4px $gris;
+            background-color: $jaune;
+            flex:1;
+            padding: 20px;
+
+            @media only screen and (max-width:$break-Phone)
+              {
+                margin-top:20px;
+              }
+            &:first-child
+            {
+              margin-right: 20px;
+
+              @media only screen and (max-width:$break-Phone)
+              {
+                margin-right:0;
+              }
+            }
+            &:last-child
+            {
+              margin-left: 20px;
+
+              @media only screen and (max-width:$break-Phone)
+              {
+                margin-left:0;
+              }
+            }
+          }
+        }
+      }
+    } 
+    #artiste
+    {
+      border-radius: 24px;
+      border: solid 4px $gris;
+      background-color: $jaune;
+      padding:20px;
+    } 
+    #vinyles
+    {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      .vinyle
+      {
+        margin: 2px;
+        background-color: $gris;
+        .cover
+        {
+          width: 250px;
+          height: 250px;
+        }
+        .titreVinyle
+        {
+          color: white;
+        }
+        .auteurVinyle
+        {
+          color: white;
+        }
+        .dateSortie
+        {
+          color: white;
+        }
+        button
+        {
+          display: block;
+          margin: auto;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    footer
+    {
+      border-radius: 6px;
+      border: solid 4px $jaune;
+      padding: 20px 100px;
+      margin-top: 40px;
+        @media only screen and (max-width:$break-Phone)
+        {
+          padding:20px;
+        }
+      #lien
+      {
+        display: flex;
+        justify-content: space-between;
+        ul
+      {
+        margin: 0;
+        padding:0;
+        li
+          {
+            list-style: none;
+            margin-bottom: 10px;
+            a
+            {
+              color: black;
+              text-decoration: none;
+            }
+          }
+      }   
+      #faitPar
+      {
+        text-align: end;
+        color: white;
+        a
+        {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
