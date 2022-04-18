@@ -3,9 +3,9 @@
         <div id="separe">
             <div id="gauche">
                 <div>
-                    <img class="photoProfil" />
+                    <img class="photoProfil"/>
                     <p>Nom du Demandeur</p>
-                    <button class="bouton" onclick="location.href='articles.html'">Voir la Collection</button>
+                    <button class="bouton">Voir la Collection</button>
                 </div>
                 <p>V proposé:</p>
                 <img class="cover" />
@@ -14,7 +14,7 @@
                 <div>
                     <img class="photoProfil" />
                     <p>Nom du Propriétaire</p>
-                    <button class="bouton" onclick="location.href='articles.html'">Voir la Collection</button>
+                    <button class="bouton">Voir la Collection</button>
                 </div>
                 <p>V demandé:</p>
                 <img class="cover"/>

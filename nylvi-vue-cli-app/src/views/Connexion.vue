@@ -7,7 +7,7 @@
                     <div>
                         <input type="text" placeholder="Pseudo / Adresse mail" class="id"/>
                         <input type="password" placeholder="mot de passe" class="mdp"/>
-                        <router-link class="bouton" to="console">Connexion</router-link>
+                        <router-link class="bouton" to="console" >Connexion</router-link>
                     </div>
                 </div>
                 <div id="droite">
@@ -29,8 +29,5 @@
 
 export default{
   name:'Connexion',
-  components:{
-
-  }
 }
 </script>

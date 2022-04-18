@@ -23,11 +23,6 @@
                     </article>
                 </div>
             </section>
-            <section id="artiste">
-                <input type="text" class="titreAjout" placeholder="titre du post"/>
-                <textarea name="creerTexte" rows="10em">
-                </textarea>
-            </section>
     </div>
 </template>
 
