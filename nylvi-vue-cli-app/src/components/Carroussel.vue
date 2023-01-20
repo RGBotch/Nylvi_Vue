@@ -1,11 +1,11 @@
 <template>
 <section id='recent'>
-    <h2>Dernier ajout</h2>
+    <h2>Derniers ajouts</h2>
     <div id='wrapper'>
         <div class='carrousel'>
-            <router-link v-for="produit in produits" :class="'plan p'+produit.id" :key="produit.id" to="Articles">
-                <img class='cover' v-bind:src="produit.image"/>
-                <p class='titreVinyle'>{{produit.nom}}</p>
+            <router-link v-for="product in limitedProducts" :class="'plan p'+product.id" :key="product.id" to="Articles">
+                <img class='cover' v-bind:src="product.cover"/>
+                <p class='titreVinyle'>{{product.name}}</p>
             </router-link>
         </div>
     </div>
@@ -14,14 +14,27 @@
 
 <script>
 
-import {mapState} from 'vuex'
+import {mapActions, mapState} from 'vuex'
 export default ({
    name: 'carroussel',
-   computed: {
-       ...mapState(['produits'])
-   },
-   methods:{
-   }
+  data() {
+    return {
+      limit: 8
+    }
+  },
+  computed:
+      mapState({
+        products: state => state.products,
+        limitedProducts() {
+          return this.products.slice(0, this.limit);
+        },
+      }),
+  methods: {
+    ...mapActions({'loadProduct': "fetchProducts"}),
+  },
+  beforeMount() {
+    this.loadProduct();
+  }
 })
 </script>
 

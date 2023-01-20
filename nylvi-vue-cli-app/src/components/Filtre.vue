@@ -1,5 +1,5 @@
 <template>
-    <section id="filtre">
+    <section id="filtre" >
                 <div id="potent">
                     <div id="prix">
                         <h4>Prix</h4>
@@ -9,7 +9,7 @@
                         </div>
                     </div>
                     <div id="periode">
-                        <h4>Periode</h4>
+                        <h4>Date</h4>
                         <div class="slider">
                             <div class="fader">
                             </div>
@@ -30,23 +30,20 @@
                                 <li>Trance</li>
                             </ul>
                         </li>
-                        <li  class="niveau1">Artiste
+                        <li class="niveau1">Artiste
                             <ul class="niveau2">
-                                <li>Kanye West</li>
-                                <li>Pouya</li>
-                                <li>Lana del Rey</li>
+                                <li v-for="artiste in artistes" v-bind:id="artiste.id" :key="artiste.id" >{{artiste.name}}</li>
                             </ul>
                         </li>
                         <li class="niveau1">Edition
                             <ul class="niveau2">
-                                <li>Hip hop</li>
-                                <li>Techno</li>
+                                <li v-for="artiste in artistes" v-bind:id="artiste.id" :key="artiste.id">Hip hop</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
                 <div id="dropHard">
-                    <ul  class="niveau1">
+                    <ul class="niveau1">
                         <li class="niveau1">Format
                             <ul class="niveau2">
                                 <li>Album</li>
@@ -75,8 +72,22 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default ({
    name: 'Filtre',
-
+   computed:
+      mapState({
+        products: state => state.products,
+        artistes: state => state.artistes
+      }),
+    methods: {
+      ...mapActions({'loadProduct': "fetchProducts"}),
+      ...mapActions({'loadArtiste': "fetchArtistes"}),
+    },
+    beforeMount() {
+      this.loadProduct();
+      this.loadArtiste();
+    }
 })
 </script>
