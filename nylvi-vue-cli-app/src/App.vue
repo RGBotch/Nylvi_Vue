@@ -1,5 +1,8 @@
 <template>
     <div id="app">
+      <div id="navBurger">
+        <img src="../public/image/navBurger.png"/>
+      </div>
         <main>
             <header id="petit">
                 <div id="haut">
@@ -61,6 +64,11 @@
         </footer>
     </div>
 </template>
+
+<script>
+
+
+</script>
 
 
 

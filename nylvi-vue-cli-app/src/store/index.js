@@ -7,21 +7,32 @@ export default new Vuex.Store({
   state:{
     products:[],
     artistes:[],
-    utilisateurs:[],
+    users:[],
+    tailles:[],
+    categories:[],
     posts:[],
-    paniers:[]
+    paniers:[],
+    token: null
   },
   mutations: {
-    // DELETE_PRODUIT(state, panier) {
-    //   var index = state.paniers.findIndex(p => p.id == panier.id);
-    //   state.paniers.splice(index, 1);
-    // },
     setProducts(state, products) {
       state.products = products;
     },
     setArtistes(state, artistes) {
       state.artistes = artistes;
     },
+    setTailles(state, tailles) {
+      state.tailles = tailles;
+    },
+    setCategories(state, categories) {
+      state.categories = categories;
+    },
+    setToken(state, token) {
+      state.token = token
+    },
+    clearToken(state) {
+      state.token = null
+    }
   },
   actions: {
     fetchProducts({ commit }) {
@@ -38,6 +49,22 @@ export default new Vuex.Store({
           .then(response => response.json())
           .then(artistes => {
             commit('setArtistes', artistes[0]);
+          });
+    },
+    fetchTailles({ commit }) {
+      const apiUrl = 'http://127.0.0.1:8000/api/tailles';
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(tailles => {
+            commit('setTailles', tailles[0]);
+          });
+    },
+    fetchCategories({ commit }) {
+      const apiUrl = 'http://127.0.0.1:8000/api/categories';
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(categories => {
+            commit('setCategories', categories[0]);
           });
     },
   },

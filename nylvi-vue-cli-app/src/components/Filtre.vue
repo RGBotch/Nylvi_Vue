@@ -18,16 +18,9 @@
                 </div>
                 <div id="dropContent">
                     <ul class="niveau1">
-                        <li class="niveau1">Genre
+                        <li class="niveau1">Catégorie
                             <ul class="niveau2">
-                                <li>Hip hop</li>
-                                <li>Techno</li>
-                                <li>Dance</li>
-                                <li>House</li>
-                                <li>Rock</li>
-                                <li>Metal</li>
-                                <li>Punk</li>
-                                <li>Trance</li>
+                              <li v-for="categorie in categories" v-bind:id="categorie.id" :key="categorie.id" >{{categorie.name}}</li>
                             </ul>
                         </li>
                         <li class="niveau1">Artiste
@@ -37,7 +30,7 @@
                         </li>
                         <li class="niveau1">Edition
                             <ul class="niveau2">
-                                <li v-for="artiste in artistes" v-bind:id="artiste.id" :key="artiste.id">Hip hop</li>
+                                <li>Prout</li>
                             </ul>
                         </li>
                     </ul>
@@ -61,9 +54,7 @@
                         </li>
                 <li class="niveau1">Taille
                     <ul class="niveau2">
-                        <li>12" 30cm</li>
-                        <li>10" 25cm</li>
-                        <li>7" 17.5cm</li>
+                      <li v-for="taille in tailles" v-bind:id="taille.id" :key="taille.id" >{{taille.name}}</li>
                     </ul>
                 </li>
             </ul>
@@ -79,15 +70,21 @@ export default ({
    computed:
       mapState({
         products: state => state.products,
-        artistes: state => state.artistes
+        artistes: state => state.artistes,
+        tailles: state => state.tailles,
+        categories: state => state.categories
       }),
     methods: {
       ...mapActions({'loadProduct': "fetchProducts"}),
       ...mapActions({'loadArtiste': "fetchArtistes"}),
+      ...mapActions({'loadTaille': "fetchTailles"}),
+      ...mapActions({'loadCategorie': "fetchCategories"})
     },
     beforeMount() {
       this.loadProduct();
       this.loadArtiste();
+      this.loadTaille();
+      this.loadCategorie();
     }
 })
 </script>
